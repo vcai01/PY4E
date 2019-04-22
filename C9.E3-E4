@@ -1,0 +1,39 @@
+"""
+Exercise 3: Write a program to read through a mail log, 
+build a histogram using a dictionary 
+to count how many messages have come from each email address, 
+and print the dictionary.
+"""
+
+fname = input('Enter file name: ')
+fhand = open(fname)
+counts = dict()
+for line in fhand:
+    if line.startswith('From:'): continue
+    if line.startswith('From'):
+        word = line.strip()
+        word = line.split()
+        email = word[1]
+        if email in counts:
+            counts[email] += 1
+        else:
+            counts[email] = 1
+#print(counts)
+
+"""
+Exercise 4: Add code to the above program 
+to figure out who has the most messages in the file. 
+After all the data has been read 
+and the dictionary has been created, 
+look through the dictionary using a maximum loop 
+(see Chapter 5: Maximum and minimum loops) 
+to find who has the most messages 
+and print how many messages the person has.
+"""
+#print(max(list(counts.values())))
+def get_key(val): 
+    for key, value in counts.items(): 
+         if val == value: 
+             return key 
+print(get_key(max(list(counts.values()))), max(list(counts.values())))
+

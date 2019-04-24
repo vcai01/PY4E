@@ -19,7 +19,7 @@ for line in fhand:
         lst = line.strip()
         lst = line.split()
         email = lst[1]
-        # print(new_lst)
+        # print(email)
         if email not in counts:
             counts[email] = 1
         else:

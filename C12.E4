@@ -26,7 +26,7 @@ url = input('Enter - ')
 html = urllib.request.urlopen(url, context=ctx).read()
 soup = BeautifulSoup(html, 'html.parser')
 
-# Retrieve all of the anchor tags
+# Retrieve all of the p tags as a list
 tags = soup('p')
 count = 0
 for tag in tags:
